@@ -13,6 +13,6 @@ export const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'resume', component: ResumeComponent },
   { path: 'skills', component: SkillsComponent },
-  // Add more routes as needed
-  { path: '**', redirectTo: '' } // Redirect any invalid route to home
+
+  { path: '**', redirectTo: '' }
 ];
