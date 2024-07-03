@@ -1,0 +1,27 @@
+.home-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Adjust height as needed */
+
+  .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 20px;
+
+      img {
+          width: 100%;
+          height: auto;
+      }
+  }
+
+  .profile-name {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      color: #333;
+  }
+}
