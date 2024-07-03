@@ -1,12 +1,12 @@
+// src/app/skills/skills.component.ts
+
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
-  standalone: true,
-  imports: [],
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.scss'
+  styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent {
-
+  // Add logic or data properties specific to the skills component here
 }

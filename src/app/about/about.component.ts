@@ -1,12 +1,12 @@
+// src/app/about/about.component.ts
+
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-about',
-  standalone: true,
-  imports: [],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-
+  // Add logic or data properties specific to the about component here
 }
