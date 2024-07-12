@@ -1,42 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+$primary-color: #6c5ce7;
+$secondary-color: #a29bfe;
+$text-color: #ffffff;
+$bg-color: #0c0c0c;
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .home-section {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: $bg-color;
+  padding: 50px 0;
+  overflow: hidden;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 
   .profile-image {
-    width: 250px;
-    height: 250px;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
-    margin-bottom: 20px;
+    box-shadow: 0 0 30px rgba($primary-color, 0.3);
+    animation: fadeInUp 1s ease-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(45deg, $primary-color, $secondary-color);
+      z-index: -1;
+      border-radius: 50%;
+      filter: blur(10px);
+    }
 
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
     }
   }
 
-  .profile-name {
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    color: #ffffff;
-    text-transform: uppercase;
+  .profile-text {
+    text-align: left;
+    animation: fadeInUp 1s ease-out 0.3s both;
+
+    .text-one {
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: $secondary-color;
+      margin-bottom: 0;
+    }
+
+    .text-two {
+      font-size: 3rem;
+      font-weight: 600;
+      color: $text-color;
+      margin-top: 0;
+      margin-bottom: 10px;
+
+      .typed-text {
+        color: $primary-color;
+      }
+    }
+
+    .profile-name {
+      font-size: 4rem;
+      font-weight: 700;
+      color: $text-color;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .bio {
+      font-size: 1.2rem;
+      color: rgba($text-color, 0.8);
+      margin-bottom: 30px;
+    }
+
+    .cta-buttons {
+      .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        margin-right: 15px;
+
+        &-primary {
+          background-color: $primary-color;
+          color: $text-color;
+          border: none;
+
+          &:hover {
+            background-color: darken($primary-color, 10%);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba($primary-color, 0.4);
+          }
+        }
+
+        &-outline {
+          background-color: transparent;
+          color: $text-color;
+          border: 2px solid $secondary-color;
+
+          &:hover {
+            background-color: $secondary-color;
+            color: $bg-color;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba($secondary-color, 0.4);
+          }
+        }
+      }
+    }
   }
-  .text-one{
-    font-size: 24px;
-    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .home-section {
     text-align: center;
-    color: #ffffff;
-    text-transform: uppercase;
-  }
-  .text-two{
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    color: #ffffff;
-    text-transform: uppercase;
+
+    .profile-image {
+      margin-bottom: 30px;
+    }
+
+    .profile-text {
+      text-align: center;
+
+      .text-one, .text-two {
+        font-size: 2rem;
+      }
+
+      .profile-name {
+        font-size: 3rem;
+      }
+    }
   }
 }
