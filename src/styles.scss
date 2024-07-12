@@ -1,5 +1,14 @@
-body{
-  background-color: rgb(20, 0, 48);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900|Oswald:wght@200..700&display=swap');
 
-  font-family: 'Roboto', sans-serif;
+:root {
+  --primary-color: rgb(20, 0, 48);
+  --accent-color: #ffcc00;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  margin: 0;
+  padding: 0;
 }
