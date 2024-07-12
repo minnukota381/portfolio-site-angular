@@ -18,8 +18,10 @@
     "@angular/platform-browser": "^18.0.6",
     "@angular/platform-browser-dynamic": "^18.0.6",
     "@angular/router": "^18.0.6",
+    "@types/typed.js": "^2.0.9",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "typed.js": "^2.1.0",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {

@@ -94,7 +94,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/typed.js/lib/typed.min.js"
+          ]
           }
         }
       }
