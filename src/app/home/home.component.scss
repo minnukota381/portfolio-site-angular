@@ -1,5 +1,4 @@
 .home-section {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,23 +6,37 @@
   height: 100vh;
 
   .profile-image {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-bottom: 20px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
 
-      img {
-          width: 100%;
-          height: auto;
-      }
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   .profile-name {
-      font-size: 24px;
-      font-weight: bold;
-      text-align: center;
-      color: #ffffff;
-      text-transform: uppercase;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+  .text-one{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+  .text-two{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
   }
 }
