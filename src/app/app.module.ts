@@ -3,19 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { appConfig } from './app.config'; // Import your app configuration
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component'; // Import HomeComponent
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    HomeComponent // Declare HomeComponent here
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([]), // Ensure to import RouterModule.forRoot([]) here as well
+    RouterModule.forRoot([]) // Configure your routes here if you have them
   ],
-  providers: [
-    appConfig.providers // Include appConfig providers here
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
