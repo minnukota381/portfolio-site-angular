@@ -8,11 +8,11 @@ import { routes } from './app.routes'; // Import your routes
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent // Include HeaderComponent in declarations
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes) // Configure your routes
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
