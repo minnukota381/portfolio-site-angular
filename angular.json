@@ -22,14 +22,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/portfolio-angular",
             "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -56,6 +54,11 @@
                   "type": "anyComponentStyle",
                   "maximumWarning": "2kB",
                   "maximumError": "4kB"
+                },
+                {
+                  "type": "css",
+                  "maximumWarning": "2.05kB",
+                  "maximumError": "4.10kB"
                 }
               ],
               "outputHashing": "all"
@@ -72,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "portfolio-angular:build:production"
+              "browserTarget": "portfolio-angular:build:production"
             },
             "development": {
-              "buildTarget": "portfolio-angular:build:development"
+              "browserTarget": "portfolio-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,11 +90,10 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
+              "src/polyfills.ts",
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
