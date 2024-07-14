@@ -1,27 +1,52 @@
-# PortfolioAngular
+### Portfolio Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.7.
+This repository contains the source code for my personal portfolio website built with Angular. The website showcases my projects, skills, and contact information.
 
-## Development server
+#### Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Home Page:** Introduction with a brief bio and a photo.
+- **About Section:** Detailed information about my background and experience.
+- **Projects Section:** A showcase of my projects with descriptions and links.
+- **Skills Section:** A list of my technical skills and proficiencies.
+- **Contact Section:** A form for visitors to get in touch with me.
 
-## Code scaffolding
+#### Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Frontend:** Angular, SCSS
+- **Build Tool:** Angular CLI
+- **Deployment:** Vercel
 
-## Build
+#### Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Clone the repository:**
 
-## Running unit tests
+   ```bash
+   git clone https://github.com/minnukota381/portfolio-site-angular.git
+   cd portfolio-site-angular
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Install dependencies:**
 
-## Running end-to-end tests
+   ```bash
+   npm install
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. **Run the development server:**
 
-## Further help
+   ```bash
+   npm start
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+4. **Build for production:**
+
+   ```bash
+   npm run build
+   ```
+
+#### Contributions
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+#### License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
