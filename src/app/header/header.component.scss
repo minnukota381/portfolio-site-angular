@@ -1,18 +1,22 @@
-$primary-color: #3498db;
-$secondary-color: #2c3e50;
-$text-color: #333;
-$hover-color: #2980b9;
+$primary-color: #6c5ce7;
+$secondary-color: #a29bfe;
+$text-color: #2d3436;
+$hover-color: #fd79a8;
+$bg-color: #ffffff;
 $transition-speed: 0.3s;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 .navbar {
-  background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
+  background-color: $bg-color;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 0;
   transition: all $transition-speed ease;
+  font-family: 'Poppins', sans-serif;
 
   &.scrolled {
     padding: 0.5rem 0;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba($bg-color, 0.98);
   }
 
   .container {
@@ -22,20 +26,34 @@ $transition-speed: 0.3s;
   }
 
   .navbar-brand {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     color: $primary-color;
-    transition: color $transition-speed ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all $transition-speed ease;
+
+    i {
+      margin-right: 0.5rem;
+      font-size: 1.8rem;
+    }
 
     &:hover {
       color: $hover-color;
+      transform: translateY(-2px);
     }
   }
 
   .navbar-toggler {
     border: none;
+    background-color: transparent;
+
     &:focus {
       box-shadow: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(108, 92, 231, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
   }
 
@@ -45,21 +63,28 @@ $transition-speed: 0.3s;
     align-items: center;
 
     .nav-item {
-      margin: 0 0.5rem;
+      margin: 0 0.75rem;
 
       .nav-link {
         color: $text-color;
-        font-weight: 500;
+        font-weight: 600;
+        font-size: 1.1rem;
         position: relative;
         padding: 0.5rem 0;
-        transition: color $transition-speed ease;
+        transition: all $transition-speed ease;
+
+        i {
+          margin-right: 0.5rem;
+          font-size: 1.2rem;
+          transition: all $transition-speed ease;
+        }
 
         &:before {
           content: '';
           position: absolute;
           width: 0;
-          height: 2px;
-          bottom: -2px;
+          height: 3px;
+          bottom: -3px;
           left: 0;
           background-color: $primary-color;
           transition: width $transition-speed ease;
@@ -67,9 +92,15 @@ $transition-speed: 0.3s;
 
         &:hover, &.active {
           color: $primary-color;
+          transform: translateY(-2px);
 
           &:before {
             width: 100%;
+          }
+
+          i {
+            color: $hover-color;
+            transform: scale(1.2);
           }
         }
       }
@@ -95,8 +126,47 @@ $transition-speed: 0.3s;
           &:before {
             bottom: 0;
           }
+
+          &:hover, &.active {
+            transform: translateX(5px);
+
+            i {
+              transform: scale(1.2) translateX(2px);
+            }
+          }
         }
       }
     }
   }
+}
+
+// Add this for a cool hover effect on the entire navbar
+.navbar:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+// Add a subtle background animation
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(45deg, rgba($primary-color, 0.05), rgba($secondary-color, 0.05), rgba($hover-color, 0.05));
+  background-size: 200% 200%;
+  animation: gradientBG 15s ease infinite;
+  z-index: -1;
 }
