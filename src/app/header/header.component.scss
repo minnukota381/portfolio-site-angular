@@ -137,12 +137,10 @@ $transition-speed: 0.3s;
   }
 }
 
-// Add this for a cool hover effect on the entire navbar
 .navbar:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-// Add a subtle background animation
 @keyframes gradientBG {
   0% {
     background-position: 0% 50%;
