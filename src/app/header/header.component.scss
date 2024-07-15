@@ -5,14 +5,11 @@ $hover-color: #fd79a8;
 $bg-color: #ffffff;
 $transition-speed: 0.3s;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
 .navbar {
   background-color: $bg-color;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 0.75rem 0;
   transition: all $transition-speed ease;
-  font-family: 'Poppins', sans-serif;
 
   &.scrolled {
     padding: 0.5rem 0;
