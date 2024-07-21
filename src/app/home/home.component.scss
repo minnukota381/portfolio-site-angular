@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
 $primary-color: #6c5ce7;
 $secondary-color: #a29bfe;
 $text-color: #ffffff;
-$bg-color: #0c0c0c;
+$bg-color: #0a0a0a;
+$accent-color: #fd79a8;
 
 @keyframes fadeInUp {
   from {
@@ -16,56 +17,68 @@ $bg-color: #0c0c0c;
   }
 }
 
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
 .home-section {
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   min-height: 100vh;
   background-color: $bg-color;
-  padding: 50px 0;
+  padding: 100px 0;
   overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
 
   .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    position: relative;
+    z-index: 2;
   }
 
-  .profile-image {
+  .profile-image-container {
     position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 0 auto;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba($primary-color, 0.3);
-    animation: fadeInUp 1s ease-out;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 30px;
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      right: -5px;
-      bottom: -5px;
-      background: linear-gradient(45deg, $primary-color, $secondary-color);
-      z-index: -1;
-      border-radius: 50%;
-      filter: blur(10px);
-    }
-
-    img {
+    .profile-image {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba($primary-color, 0.3);
+      animation: fadeInUp 1s ease-out, float 6s ease-in-out infinite;
 
-      &:hover {
-        transform: scale(1.05);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
       }
     }
   }
 
   .profile-text {
-    text-align: left;
     animation: fadeInUp 1s ease-out 0.3s both;
 
     .text-one {
@@ -73,6 +86,12 @@ $bg-color: #0c0c0c;
       font-weight: 300;
       color: $secondary-color;
       margin-bottom: 0;
+
+      .wave {
+        display: inline-block;
+        animation: wave 2.5s infinite;
+        transform-origin: 70% 70%;
+      }
     }
 
     .text-two {
@@ -83,17 +102,20 @@ $bg-color: #0c0c0c;
       margin-bottom: 10px;
 
       .typed-text {
-        color: $primary-color;
+        color: $accent-color;
       }
     }
 
     .profile-name {
-      font-size: 4rem;
+      font-size: 4.5rem;
       font-weight: 700;
       color: $text-color;
       text-transform: uppercase;
       margin-bottom: 20px;
       letter-spacing: 2px;
+      background: linear-gradient(45deg, $primary-color, $accent-color);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .bio {
@@ -103,6 +125,8 @@ $bg-color: #0c0c0c;
     }
 
     .cta-buttons {
+      margin-bottom: 30px;
+
       .btn {
         padding: 12px 25px;
         font-size: 1rem;
@@ -110,7 +134,7 @@ $bg-color: #0c0c0c;
         text-transform: uppercase;
         border-radius: 30px;
         transition: all 0.3s ease;
-        margin-right: 15px;
+        margin: 0 10px 10px;
 
         &-primary {
           background-color: $primary-color;
@@ -138,26 +162,82 @@ $bg-color: #0c0c0c;
         }
       }
     }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba($text-color, 0.1);
+        color: $text-color;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: $primary-color;
+          color: $bg-color;
+          transform: translateY(-3px);
+        }
+      }
+    }
+  }
+
+  .bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    .shape {
+      position: absolute;
+      background: linear-gradient(45deg, $primary-color, $secondary-color);
+      border-radius: 50%;
+      opacity: 0.1;
+
+      &-1 {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        left: -150px;
+      }
+
+      &-2 {
+        width: 200px;
+        height: 200px;
+        bottom: -100px;
+        right: -100px;
+      }
+
+      &-3 {
+        width: 100px;
+        height: 100px;
+        bottom: 50px;
+        left: 50px;
+      }
+    }
   }
 }
 
 @media (max-width: 768px) {
   .home-section {
-    text-align: center;
-
-    .profile-image {
-      margin-bottom: 30px;
-    }
+    padding: 50px 0;
 
     .profile-text {
-      text-align: center;
-
       .text-one, .text-two {
         font-size: 2rem;
       }
 
       .profile-name {
-        font-size: 3rem;
+        font-size: 3.5rem;
       }
     }
   }
