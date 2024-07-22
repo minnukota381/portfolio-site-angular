@@ -24,7 +24,7 @@
     "sass": "^1.77.8",
     "tslib": "^2.3.0",
     "typed.js": "^2.1.0",
-    "zone.js": "~0.14.3"
+    "zone.js": "~0.14.8"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^18.0.7",
