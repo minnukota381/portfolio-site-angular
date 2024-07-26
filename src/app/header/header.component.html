@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" routerLink="/">
       <i class="fas fa-code"></i> <span>Minnu</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,22 +9,22 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home"></i> <span>Home</span></a>
+          <a class="nav-link" routerLink="/" routerLinkActive="active" aria-current="page"><i class="fas fa-home"></i> <span>Home</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-user"></i> <span>About</span></a>
+          <a class="nav-link" routerLink="/about" routerLinkActive="active"><i class="fas fa-user"></i> <span>About</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-project-diagram"></i> <span>Projects</span></a>
+          <a class="nav-link" routerLink="/projects" routerLinkActive="active"><i class="fas fa-project-diagram"></i> <span>Projects</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-cogs"></i> <span>Skills</span></a>
+          <a class="nav-link" routerLink="/skills" routerLinkActive="active"><i class="fas fa-cogs"></i> <span>Skills</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-cogs"></i> <span>Resume</span></a>
+          <a class="nav-link" routerLink="/resume" routerLinkActive="active"><i class="fas fa-cogs"></i> <span>Resume</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-envelope"></i> <span>Contact</span></a>
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active"><i class="fas fa-envelope"></i> <span>Contact</span></a>
         </li>
       </ul>
     </div>
