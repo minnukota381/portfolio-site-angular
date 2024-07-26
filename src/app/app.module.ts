@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ContactComponent } from './contact/contact.component';
+import { SkillsComponent } from './skills/skills.component';
+import { ResumeComponent } from './resume/resume.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +16,10 @@ import { AboutComponent } from './about/about.component';
     HeaderComponent,
     HomeComponent,
     AboutComponent,
+    ProjectsComponent,
+    ContactComponent,
+    SkillsComponent,
+    ResumeComponent,
   ],
   imports: [
     BrowserModule,
