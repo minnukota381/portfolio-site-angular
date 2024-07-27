@@ -1,58 +1,157 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
 .contact {
-  background-color: #f9f9f9;
-  padding: 2rem 0;
+  background: linear-gradient(135deg, #f6f8fd 0%, #f1f5fe 100%);
+  padding: 5rem 1rem;
 
   .container {
-    width: 90%;
-    max-width: 800px;
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
-    padding: 0 1rem;
 
     h2 {
       text-align: center;
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
       color: #333;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, #007bff, #00c6ff);
+        margin: 0.8rem auto 0;
+        border-radius: 2px;
+      }
     }
 
     form {
       display: flex;
       flex-direction: column;
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
       .form-group {
-        margin-bottom: 1rem;
+        position: relative;
+        margin-bottom: 1.5rem;
 
-        label {
-          display: block;
-          margin-bottom: 0.5rem;
-          font-size: 1rem;
-          color: #555;
+        i {
+          position: absolute;
+          top: 0.8rem;
+          left: 1rem;
+          color: #007bff;
+          font-size: 1.2rem;
         }
 
         input, textarea {
           width: 100%;
-          padding: 0.5rem;
-          border: 1px solid #ddd;
-          border-radius: 4px;
+          padding: 0.8rem 1rem 0.8rem 2.5rem;
+          border: 2px solid #e0e0e0;
+          border-radius: 25px;
+          background-color: #f8f9fa;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+
+          &:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+          }
+
+          &:focus + label, &:not(:placeholder-shown) + label {
+            top: -0.5rem;
+            left: 1rem;
+            font-size: 0.8rem;
+            color: #007bff;
+            background-color: #fff;
+            padding: 0 5px;
+          }
+        }
+
+        label {
+          position: absolute;
+          top: 0.8rem;
+          left: 2.5rem;
+          font-size: 1rem;
+          color: #777;
+          pointer-events: none;
+          transition: 0.3s ease all;
         }
 
         textarea {
           resize: vertical;
+          min-height: 100px;
+          border-radius: 15px;
         }
       }
 
       button {
-        padding: 0.75rem 1.5rem;
+        align-self: center;
+        padding: 0.8rem 2rem;
         border: none;
-        border-radius: 4px;
-        background-color: #007bff;
+        border-radius: 25px;
+        background: linear-gradient(90deg, #007bff, #00c6ff);
         color: #fff;
         font-size: 1rem;
+        font-weight: bold;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+
+        i {
+          margin-right: 8px;
+        }
 
         &:hover {
-          background-color: #0056b3;
+          transform: translateY(-3px);
+          box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+        }
+
+        &:active {
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 3rem 1rem;
+
+    .container {
+      h2 {
+        font-size: 2rem;
+      }
+
+      form {
+        padding: 1.5rem;
+
+        .form-group {
+          i {
+            top: 0.7rem;
+            font-size: 1rem;
+          }
+
+          input, textarea {
+            padding: 0.7rem 1rem 0.7rem 2.2rem;
+            font-size: 0.9rem;
+          }
+
+          label {
+            top: 0.7rem;
+            left: 2.2rem;
+            font-size: 0.9rem;
+          }
+        }
+
+        button {
+          padding: 0.7rem 1.5rem;
+          font-size: 0.9rem;
         }
       }
     }
