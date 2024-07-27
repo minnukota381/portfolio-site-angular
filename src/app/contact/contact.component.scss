@@ -1,13 +1,13 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
 .contact {
-  background: linear-gradient(135deg, #f6f8fd 0%, #f1f5fe 100%);
   padding: 5rem 1rem;
 
   .container {
     width: 100%;
-    max-width: 600px;
+    max-width: 90%;
     margin: 0 auto;
+    padding: 0 1rem;
 
     h2 {
       text-align: center;
@@ -34,6 +34,7 @@
       padding: 2rem;
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
 
       .form-group {
         position: relative;
@@ -48,13 +49,14 @@
         }
 
         input, textarea {
-          width: 100%;
+          width: calc(100% - 3.5rem);
           padding: 0.8rem 1rem 0.8rem 2.5rem;
           border: 2px solid #e0e0e0;
           border-radius: 25px;
           background-color: #f8f9fa;
           font-size: 1rem;
           transition: all 0.3s ease;
+          box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
 
           &:focus {
             outline: none;
@@ -119,40 +121,122 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
+  .contact {
+    padding: 4rem 1rem;
+
+    .container {
+      .form-group {
+        i {
+          font-size: 1.1rem;
+        }
+
+        input, textarea {
+          padding: 0.8rem 1rem 0.8rem 2.2rem;
+          font-size: 0.95rem;
+        }
+
+        label {
+          font-size: 0.95rem;
+        }
+      }
+
+      button {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
   .contact {
     padding: 3rem 1rem;
 
     .container {
+      .form-group {
+        i {
+          font-size: 1rem;
+        }
+
+        input, textarea {
+          padding: 0.7rem 1rem 0.7rem 2rem;
+          font-size: 0.9rem;
+        }
+
+        label {
+          font-size: 0.9rem;
+        }
+      }
+
+      button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 2rem 1rem;
+
+    .container {
+      max-width: 100%;
+
       h2 {
         font-size: 2rem;
       }
 
-      form {
-        padding: 1.5rem;
-
-        .form-group {
-          i {
-            top: 0.7rem;
-            font-size: 1rem;
-          }
-
-          input, textarea {
-            padding: 0.7rem 1rem 0.7rem 2.2rem;
-            font-size: 0.9rem;
-          }
-
-          label {
-            top: 0.7rem;
-            left: 2.2rem;
-            font-size: 0.9rem;
-          }
+      .form-group {
+        i {
+          top: 0.7rem;
+          font-size: 1rem;
         }
 
-        button {
-          padding: 0.7rem 1.5rem;
+        input, textarea {
+          padding: 0.7rem 1rem 0.7rem 2rem;
           font-size: 0.9rem;
         }
+
+        label {
+          top: 0.7rem;
+          left: 2rem;
+          font-size: 0.9rem;
+        }
+      }
+
+      button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .contact {
+    padding: 1.5rem 0.5rem;
+
+    .container {
+      .form-group {
+        i {
+          font-size: 0.9rem;
+        }
+
+        input, textarea {
+          padding: 0.6rem 0.8rem 0.6rem 1.8rem;
+          font-size: 0.85rem;
+        }
+
+        label {
+          font-size: 0.85rem;
+        }
+      }
+
+      button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
       }
     }
   }
