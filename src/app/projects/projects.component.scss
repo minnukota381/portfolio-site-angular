@@ -1,0 +1,126 @@
+.projects {
+  background-color: #f8f9fa;
+  padding: 4rem 1rem;
+
+  .container {
+    .text-center {
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .row {
+      .card {
+        margin-bottom: 2rem;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+
+        .card-body {
+          padding: 1.5rem;
+
+          .card-title {
+            font-size: 1.25rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+          }
+
+          .card-text {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1rem;
+          }
+
+          .btn {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+              background-color: #0056b3;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 3rem 1rem;
+
+    .container {
+      .text-center {
+        font-size: 2rem;
+      }
+
+      .row {
+        .card {
+          margin-bottom: 1.5rem;
+
+          .card-body {
+            .card-title {
+              font-size: 1.1rem;
+            }
+
+            .card-text {
+              font-size: 0.9rem;
+            }
+
+            .btn {
+              font-size: 0.9rem;
+              padding: 0.6rem 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .projects {
+    padding: 2rem 1rem;
+
+    .container {
+      .text-center {
+        font-size: 1.5rem;
+      }
+
+      .row {
+        .card {
+          margin-bottom: 1rem;
+
+          .card-body {
+            .card-title {
+              font-size: 1rem;
+            }
+
+            .card-text {
+              font-size: 0.8rem;
+            }
+
+            .btn {
+              font-size: 0.8rem;
+              padding: 0.5rem 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
