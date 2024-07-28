@@ -1,64 +1,19 @@
 <section class="projects">
   <div class="container">
-    <h2 class="text-center">My Projects</h2>
-    <div class="row">
-      <div class="col-md-4 col-sm-6">
-        <div class="card">
-          <img src="assets/project1.jpg" alt="Project 1">
-          <div class="card-body">
-            <h5 class="card-title">Project 1</h5>
-            <p class="card-text">Brief description of Project 1.</p>
-            <a href="#" class="btn btn-primary">View Project</a>
+    <h2 class="section-title">My Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of projects; let i = index">
+        <div class="project-image">
+          <img [src]="project.image" [alt]="project.title">
+          <div class="project-overlay">
+            <a [href]="project.link" class="project-link">View Project</a>
           </div>
         </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="card">
-          <img src="assets/project2.jpg" alt="Project 2">
-          <div class="card-body">
-            <h5 class="card-title">Project 2</h5>
-            <p class="card-text">Brief description of Project 2.</p>
-            <a href="#" class="btn btn-primary">View Project</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="card">
-          <img src="assets/project3.jpg" alt="Project 3">
-          <div class="card-body">
-            <h5 class="card-title">Project 3</h5>
-            <p class="card-text">Brief description of Project 3.</p>
-            <a href="#" class="btn btn-primary">View Project</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="card">
-          <img src="assets/project4.jpg" alt="Project 4">
-          <div class="card-body">
-            <h5 class="card-title">Project 4</h5>
-            <p class="card-text">Brief description of Project 4.</p>
-            <a href="#" class="btn btn-primary">View Project</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="card">
-          <img src="assets/project5.jpg" alt="Project 5">
-          <div class="card-body">
-            <h5 class="card-title">Project 5</h5>
-            <p class="card-text">Brief description of Project 5.</p>
-            <a href="#" class="btn btn-primary">View Project</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-6">
-        <div class="card">
-          <img src="assets/project6.jpg" alt="Project 6">
-          <div class="card-body">
-            <h5 class="card-title">Project 6</h5>
-            <p class="card-text">Brief description of Project 6.</p>
-            <a href="#" class="btn btn-primary">View Project</a>
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-description">{{ project.description }}</p>
+          <div class="project-tags">
+            <span *ngFor="let tag of project.tags" class="tag">{{ tag }}</span>
           </div>
         </div>
       </div>

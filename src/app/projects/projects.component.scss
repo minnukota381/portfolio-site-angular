@@ -1,126 +1,217 @@
 .projects {
-  background-color: #f8f9fa;
-  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #f6f9fc 0%, #e9f2f9 100%);
+  padding: 10rem 0;
+  position: relative;
+  overflow: hidden;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    opacity: 0.1;
+    z-index: 0;
+  }
+
+  &::before {
+    background: radial-gradient(circle, #4facfe 0%, #00f2fe 100%);
+    top: -100px;
+    left: -100px;
+  }
+
+  &::after {
+    background: radial-gradient(circle, #ff6b6b 0%, #feca57 100%);
+    bottom: -100px;
+    right: -100px;
+  }
 
   .container {
-    .text-center {
-      margin-bottom: 2rem;
-      font-size: 2.5rem;
-      color: #333;
-      font-weight: bold;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 4rem;
+    color: #2c3e50;
+    margin-bottom: 5rem;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 800;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 5px;
+      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      margin: 2rem auto 0;
+      border-radius: 5px;
+    }
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 3.5rem;
+  }
+
+  .project-card {
+    background-color: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+
+    &:hover {
+      transform: translateY(-20px) scale(1.05);
+      box-shadow: 0 40px 70px rgba(0, 0, 0, 0.15);
+
+      .project-image img {
+        transform: scale(1.15) rotate(3deg);
+      }
+
+      .project-overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  .project-image {
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+  }
+
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(79, 172, 254, 0.9), rgba(0, 242, 254, 0.9));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .project-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 1.2rem 2.5rem;
+    border: 3px solid #fff;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &:hover {
+      background-color: #fff;
+      color: #4facfe;
+      transform: scale(1.05);
+    }
+  }
+
+  .project-content {
+    padding: 2.5rem;
+  }
+
+  .project-title {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+
+  .project-description {
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 2rem;
+    line-height: 1.7;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .tag {
+      background-color: #f1f8ff;
+      color: #4facfe;
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #4facfe;
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .projects {
+    padding: 8rem 0;
+
+    .section-title {
+      font-size: 3.5rem;
     }
 
-    .row {
-      .card {
-        margin-bottom: 2rem;
-        border: none;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-
-        img {
-          width: 100%;
-          height: auto;
-          object-fit: cover;
-        }
-
-        .card-body {
-          padding: 1.5rem;
-
-          .card-title {
-            font-size: 1.25rem;
-            color: #333;
-            margin-bottom: 0.5rem;
-          }
-
-          .card-text {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 1rem;
-          }
-
-          .btn {
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: bold;
-            color: #fff;
-            transition: background-color 0.3s ease;
-
-            &:hover {
-              background-color: #0056b3;
-            }
-          }
-        }
-      }
+    .projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 3rem;
     }
   }
 }
 
 @media (max-width: 768px) {
   .projects {
-    padding: 3rem 1rem;
+    padding: 6rem 0;
 
-    .container {
-      .text-center {
-        font-size: 2rem;
-      }
+    .section-title {
+      font-size: 3rem;
+    }
 
-      .row {
-        .card {
-          margin-bottom: 1.5rem;
-
-          .card-body {
-            .card-title {
-              font-size: 1.1rem;
-            }
-
-            .card-text {
-              font-size: 0.9rem;
-            }
-
-            .btn {
-              font-size: 0.9rem;
-              padding: 0.6rem 1.2rem;
-            }
-          }
-        }
-      }
+    .projects-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
     }
   }
 }
 
 @media (max-width: 576px) {
   .projects {
-    padding: 2rem 1rem;
+    padding: 5rem 0;
 
-    .container {
-      .text-center {
-        font-size: 1.5rem;
-      }
+    .section-title {
+      font-size: 2.5rem;
+    }
 
-      .row {
-        .card {
-          margin-bottom: 1rem;
-
-          .card-body {
-            .card-title {
-              font-size: 1rem;
-            }
-
-            .card-text {
-              font-size: 0.8rem;
-            }
-
-            .btn {
-              font-size: 0.8rem;
-              padding: 0.5rem 1rem;
-            }
-          }
-        }
-      }
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
   }
 }
