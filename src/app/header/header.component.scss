@@ -60,13 +60,13 @@ body {
   .navbar-toggler {
     border: none;
     background-color: transparent;
-
-    &:focus {
-      box-shadow: none;
-    }
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 1050; // Ensure the toggler is above other elements
 
     .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(108, 92, 231, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(108, 92, 231, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
     }
   }
 
@@ -131,6 +131,7 @@ body {
       padding: 1rem;
       border-radius: 10px;
       margin-top: 1rem;
+      display: none;
 
       .nav-item {
         margin: 0.5rem 0;
@@ -145,220 +146,16 @@ body {
         }
       }
     }
-  }
-}
 
-// Home section styles
-.home-section {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 100px 0;
-  overflow: hidden;
-
-  .container {
-    position: relative;
-    z-index: 2;
-  }
-
-  .profile-image-container {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    margin: 0 auto 30px;
-
-    .profile-image {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      overflow: hidden;
-      box-shadow: 0 0 30px rgba($primary-color, 0.3);
-      animation: float 6s ease-in-out infinite;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-
-        &:hover {
-          transform: scale(1.05);
-        }
-      }
+    .navbar-toggler {
+      display: block;
     }
   }
-
-  .profile-text {
-    text-align: center;
-
-    .text-one {
-      font-size: 2.5rem;
-      font-weight: 300;
-      color: $secondary-color;
-      margin-bottom: 0;
-
-      .wave {
-        display: inline-block;
-        animation: wave 2.5s infinite;
-        transform-origin: 70% 70%;
-      }
-    }
-
-    .text-two {
-      font-size: 3rem;
-      font-weight: 600;
-      color: $text-color;
-      margin-top: 0;
-      margin-bottom: 10px;
-
-      .typed-text {
-        color: $accent-color;
-      }
-    }
-
-    .profile-name {
-      font-size: 4.5rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      letter-spacing: 2px;
-      background: linear-gradient(45deg, $primary-color, $accent-color);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .bio {
-      font-size: 1.2rem;
-      color: rgba($text-color, 0.8);
-      margin-bottom: 30px;
-    }
-
-    .cta-buttons {
-      margin-bottom: 30px;
-
-      .btn {
-        padding: 12px 25px;
-        font-size: 1rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        border-radius: 30px;
-        transition: all $transition-speed ease;
-        margin: 0 10px 10px;
-
-        &-primary {
-          background: linear-gradient(45deg, $primary-color, $accent-color);
-          border: none;
-          color: $text-color;
-
-          &:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba($primary-color, 0.4);
-          }
-        }
-
-        &-outline {
-          background-color: transparent;
-          color: $text-color;
-          border: 2px solid $secondary-color;
-
-          &:hover {
-            background-color: $secondary-color;
-            color: $bg-color;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba($secondary-color, 0.4);
-          }
-        }
-      }
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-
-      .social-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: rgba($text-color, 0.1);
-        color: $text-color;
-        font-size: 1.2rem;
-        transition: all $transition-speed ease;
-
-        &:hover {
-          background: linear-gradient(45deg, $primary-color, $accent-color);
-          color: $bg-color;
-          transform: translateY(-3px);
-        }
-      }
-    }
-  }
-
-  .bg-shapes {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-
-    .shape {
-      position: absolute;
-      background: linear-gradient(45deg, $primary-color, $accent-color);
-      border-radius: 50%;
-      opacity: 0.1;
-
-      &-1 {
-        width: 300px;
-        height: 300px;
-        top: -150px;
-        left: -150px;
-      }
-
-      &-2 {
-        width: 200px;
-        height: 200px;
-        bottom: -100px;
-        right: -100px;
-      }
-
-      &-3 {
-        width: 100px;
-        height: 100px;
-        bottom: 50px;
-        left: 50px;
-      }
-    }
-  }
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
-}
-
-@keyframes wave {
-  0% { transform: rotate(0deg); }
-  10% { transform: rotate(14deg); }
-  20% { transform: rotate(-8deg); }
-  30% { transform: rotate(14deg); }
-  40% { transform: rotate(-4deg); }
-  50% { transform: rotate(10deg); }
-  60% { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
 }
 
 @media (max-width: 768px) {
   .navbar {
     .navbar-nav {
-      background-color: rgba($bg-color, 0.95);
-      backdrop-filter: blur(10px);
       padding: 1rem;
       border-radius: 10px;
 
@@ -375,18 +172,18 @@ body {
         }
       }
     }
-  }
 
-  .home-section {
-    padding: 80px 0;
+    .home-section {
+      padding: 80px 0;
 
-    .profile-text {
-      .text-one, .text-two {
-        font-size: 2rem;
-      }
+      .profile-text {
+        .text-one, .text-two {
+          font-size: 2rem;
+        }
 
-      .profile-name {
-        font-size: 3.5rem;
+        .profile-name {
+          font-size: 3.5rem;
+        }
       }
     }
   }
