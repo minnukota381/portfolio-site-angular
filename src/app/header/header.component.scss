@@ -163,6 +163,7 @@ body {
       display: none;
       background-color: rgba($bg-color, 0.95);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       padding: 1rem;
       border-radius: 10px;
       margin-top: 1rem;
