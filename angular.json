@@ -103,6 +103,7 @@
               "@angular/material/prebuilt-themes/magenta-violet.css",
               "src/styles.scss",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/bootstrap/scss/bootstrap.scss"
             ],
             "scripts": []

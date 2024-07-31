@@ -58,15 +58,26 @@ body {
   }
 
   .navbar-toggler {
+    display: none;
     border: none;
     background-color: transparent;
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    z-index: 1050; // Ensure the toggler is above other elements
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    border-radius: 0.25rem;
+    transition: box-shadow 0.15s ease-in-out;
+    position: relative;
+    z-index: 1050;
 
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(108, 92, 231, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+      display: inline-block;
+      width: 1.5em;
+      height: 1.5em;
+      vertical-align: middle;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
     }
   }
 
@@ -125,13 +136,36 @@ body {
 
 @media (max-width: 991px) {
   .navbar {
+    .container {
+      flex-wrap: nowrap;
+    }
+
+    .navbar-brand {
+      flex-grow: 1;
+    }
+
+    .navbar-toggler {
+      display: block;
+      margin-left: auto;
+    }
+
+    .navbar-collapse {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: rgba($bg-color, 0.95);
+      padding: 1rem;
+      border-radius: 0 0 10px 10px;
+    }
+
     .navbar-nav {
+      display: none;
       background-color: rgba($bg-color, 0.95);
       backdrop-filter: blur(10px);
       padding: 1rem;
       border-radius: 10px;
       margin-top: 1rem;
-      display: none;
 
       .nav-item {
         margin: 0.5rem 0;
@@ -145,10 +179,6 @@ body {
           }
         }
       }
-    }
-
-    .navbar-toggler {
-      display: block;
     }
   }
 }
@@ -172,19 +202,36 @@ body {
         }
       }
     }
+  }
 
-    .home-section {
-      padding: 80px 0;
+  .home-section {
+    padding: 80px 0;
 
-      .profile-text {
-        .text-one, .text-two {
-          font-size: 2rem;
-        }
-
-        .profile-name {
-          font-size: 3.5rem;
-        }
+    .profile-text {
+      .text-one, .text-two {
+        font-size: 2rem;
       }
+
+      .profile-name {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .navbar {
+    .container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+    }
+
+    .navbar-toggler {
+      padding: 0.2rem 0.5rem;
     }
   }
 }
