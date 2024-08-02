@@ -2,7 +2,7 @@
 $primary-color: #1a237e;
 $secondary-color: #3949ab;
 $background-color: #ffffff;
-$text-color: #333333;
+$text-color: #ffffff;
 $logo-font: 'Georgia', serif;
 $body-font: 'Arial', sans-serif;
 
@@ -14,14 +14,14 @@ $body-font: 'Arial', sans-serif;
 // Styles
 body {
   font-family: $body-font;
-  background-color: $background-color;
+  // background-color: $background-color;
   margin: 0;
   padding: 0;
   color: $text-color;
 }
 
 .header {
-  background-color: $background-color;
+  // background-color: $background-color;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
@@ -88,6 +88,7 @@ body {
   .menu {
     width: 100%;
     max-height: 0;
+    background-color: rgb(5, 0, 13);
     overflow: hidden;
     flex-direction: column;
     @include transition(max-height);
