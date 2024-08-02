@@ -1,36 +1,28 @@
 // Variables
-$primary-color: #ff6b6b;
-$secondary-color: #4ecdc4;
-$accent-color: #feca57;
-$background-color: #2c2c54;
-$text-color: #ffffff;
-$logo-font: 'Pacifico', cursive;
-$body-font: 'Poppins', sans-serif;
+$primary-color: #1a237e;
+$secondary-color: #3949ab;
+$background-color: #ffffff;
+$text-color: #333333;
+$logo-font: 'Georgia', serif;
+$body-font: 'Arial', sans-serif;
 
 // Mixins
 @mixin transition($property: all, $duration: 0.3s, $timing: ease) {
   transition: $property $duration $timing;
 }
 
-@mixin glassmorphism {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-}
-
 // Styles
 body {
   font-family: $body-font;
-  background: linear-gradient(135deg, $background-color, #45456b);
+  background-color: $background-color;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
   color: $text-color;
 }
 
 .header {
-  @include glassmorphism;
+  background-color: $background-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
   top: 0;
@@ -48,46 +40,17 @@ body {
 
 .logo {
   text-decoration: none;
-  font-size: 2.5em;
-  display: flex;
-  align-items: center;
-  position: relative;
-
-  .logo-bracket {
-    color: $accent-color;
-    font-weight: 300;
-    text-shadow: 0 0 10px rgba($accent-color, 0.7);
-  }
+  font-size: 1.8em;
 
   .logo-name {
     font-family: $logo-font;
     font-weight: 700;
     color: $primary-color;
-    padding: 0 5px;
     @include transition(color);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 15px rgba($primary-color, 0.7);
 
     &:hover {
-      color: lighten($primary-color, 10%);
+      color: $secondary-color;
     }
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, $primary-color, $secondary-color, $accent-color);
-    transform: scaleX(0);
-    @include transition(transform);
-    transform-origin: right;
-  }
-
-  &:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
   }
 }
 
@@ -98,43 +61,15 @@ body {
   .nav-link {
     text-decoration: none;
     color: $text-color;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1rem;
-    padding: 10px 20px;
+    padding: 10px 15px;
     margin: 0 5px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
     @include transition(all);
-    position: relative;
-    overflow: hidden;
-
-    i {
-      margin-right: 8px;
-      font-size: 1.2em;
-    }
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, $primary-color, $secondary-color, $accent-color);
-      opacity: 0;
-      z-index: -1;
-      @include transition(opacity);
-    }
 
     &:hover, &.active {
-      color: $background-color;
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 7px 20px rgba($primary-color, 0.4);
-
-      &::before {
-        opacity: 1;
-      }
+      color: $primary-color;
+      background-color: rgba($primary-color, 0.1);
     }
   }
 }
@@ -158,16 +93,10 @@ body {
     @include transition(max-height);
 
     .nav-link {
-      width: 100%;
+      // width: 100%;
       padding: 15px;
-      border-radius: 0;
-      margin: 5px 0;
-      justify-content: flex-start;
-      background: rgba(255, 255, 255, 0.1);
-
-      &:hover, &.active {
-        background: linear-gradient(45deg, $primary-color, $secondary-color, $accent-color);
-      }
+      margin: 0;
+      border-top: 1px solid rgba($text-color, 0.1);
     }
   }
 
@@ -233,7 +162,7 @@ body {
 // 578px screen size styles
 @media (max-width: 578px) {
   .logo {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .container {
@@ -243,10 +172,6 @@ body {
   .menu .nav-link {
     padding: 12px;
     font-size: 0.9rem;
-
-    i {
-      font-size: 1em;
-    }
   }
 
   .menu-icon {
@@ -255,32 +180,12 @@ body {
   }
 }
 
-// Animations
+// Subtle animation
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
+  from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .header {
-  animation: fadeIn 0.5s ease-out;
-}
-
-@keyframes colorShift {
-  0% { filter: hue-rotate(0deg); }
-  50% { filter: hue-rotate(180deg); }
-  100% { filter: hue-rotate(360deg); }
-}
-
-.logo-name {
-  animation: colorShift 10s infinite linear;
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
-
-.nav-link {
-  animation: float 5s ease-in-out infinite;
+  animation: fadeIn 0.3s ease-out;
 }
