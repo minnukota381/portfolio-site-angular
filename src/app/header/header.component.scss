@@ -1,8 +1,8 @@
 // Variables
 $primary-color: #6200ee;
 $secondary-color: #03dac6;
-$background-color: #f5f5f5;
-$text-color: #ffffff;
+$background-color: #ffffff;
+$text-color: #333333;
 $logo-font: 'Poppins', sans-serif;
 $body-font: 'Roboto', sans-serif;
 
@@ -20,7 +20,9 @@ body {
 }
 
 .header {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
   top: 0;
@@ -39,6 +41,8 @@ body {
 .logo {
   text-decoration: none;
   font-size: 2em;
+  display: flex;
+  align-items: center;
 
   .logo-bracket {
     color: $secondary-color;
@@ -59,43 +63,29 @@ body {
 }
 
 .menu {
-  ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
+  display: flex;
+  align-items: center;
 
-  li {
-    margin-left: 30px;
-  }
-
-  a {
+  .nav-link {
     text-decoration: none;
     color: $text-color;
     font-weight: 500;
-    font-size: 1.1em;
-    padding: 10px 0;
-    position: relative;
-    @include transition(color);
+    font-size: 1rem;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    @include transition(background-color, color);
 
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: $primary-color;
-      @include transition(width);
+    i {
+      margin-right: 8px;
+      font-size: 1.2em;
     }
 
-    &:hover {
+    &:hover, &.active {
+      background-color: rgba($primary-color, 0.1);
       color: $primary-color;
-
-      &::after {
-        width: 100%;
-      }
     }
   }
 }
@@ -115,24 +105,15 @@ body {
     width: 100%;
     max-height: 0;
     overflow: hidden;
+    flex-direction: column;
     @include transition(max-height);
 
-    ul {
-      flex-direction: column;
-    }
-
-    li {
-      margin: 0;
-    }
-
-    a {
-      display: block;
+    .nav-link {
+      width: 100%;
       padding: 15px;
-      border-top: 1px solid $background-color;
-
-      &::after {
-        display: none;
-      }
+      border-radius: 0;
+      margin: 0;
+      border-top: 1px solid rgba($text-color, 0.1);
     }
   }
 
