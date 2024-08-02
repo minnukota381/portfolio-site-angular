@@ -1,28 +1,35 @@
 // Variables
-$primary-color: #6200ee;
-$secondary-color: #03dac6;
-$background-color: #ffffff;
-$text-color: #333333;
-$logo-font: 'Poppins', sans-serif;
-$body-font: 'Roboto', sans-serif;
+$primary-color: #8a2be2;
+$secondary-color: #00ffff;
+$background-color: #1a1a2e;
+$text-color: #ffffff;
+$logo-font: 'Comfortaa', cursive;
+$body-font: 'Quicksand', sans-serif;
 
 // Mixins
 @mixin transition($property: all, $duration: 0.3s, $timing: ease) {
   transition: $property $duration $timing;
 }
 
+@mixin glassmorphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
 // Styles
 body {
   font-family: $body-font;
-  background-color: $background-color;
+  background: linear-gradient(45deg, #1a1a2e, #16213e, #0f3460);
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  color: $text-color;
 }
 
 .header {
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  @include glassmorphism;
   position: fixed;
   width: 100%;
   top: 0;
@@ -40,13 +47,15 @@ body {
 
 .logo {
   text-decoration: none;
-  font-size: 2em;
+  font-size: 2.5em;
   display: flex;
   align-items: center;
+  position: relative;
 
   .logo-bracket {
     color: $secondary-color;
     font-weight: 300;
+    text-shadow: 0 0 10px rgba($secondary-color, 0.7);
   }
 
   .logo-name {
@@ -55,10 +64,29 @@ body {
     color: $primary-color;
     padding: 0 5px;
     @include transition(color);
+    text-shadow: 0 0 15px rgba($primary-color, 0.7);
 
     &:hover {
-      color: darken($primary-color, 10%);
+      color: lighten($primary-color, 10%);
     }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
+    transform: scaleX(0);
+    @include transition(transform);
+    transform-origin: right;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
   }
 }
 
@@ -69,23 +97,43 @@ body {
   .nav-link {
     text-decoration: none;
     color: $text-color;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1rem;
-    padding: 10px 15px;
+    padding: 10px 20px;
     margin: 0 5px;
-    border-radius: 25px;
+    border-radius: 30px;
     display: flex;
     align-items: center;
-    @include transition(background-color, color);
+    @include transition(all);
+    position: relative;
+    overflow: hidden;
 
     i {
       margin-right: 8px;
       font-size: 1.2em;
     }
 
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, $primary-color, $secondary-color);
+      opacity: 0;
+      z-index: -1;
+      @include transition(opacity);
+    }
+
     &:hover, &.active {
-      background-color: rgba($primary-color, 0.1);
-      color: $primary-color;
+      color: $background-color;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 7px 20px rgba($primary-color, 0.4);
+
+      &::before {
+        opacity: 1;
+      }
     }
   }
 }
@@ -112,8 +160,13 @@ body {
       width: 100%;
       padding: 15px;
       border-radius: 0;
-      margin: 0;
-      border-top: 1px solid rgba($text-color, 0.1);
+      margin: 5px 0;
+      justify-content: flex-start;
+      background: rgba(255, 255, 255, 0.1);
+
+      &:hover, &.active {
+        background: linear-gradient(45deg, $primary-color, $secondary-color);
+      }
     }
   }
 
@@ -130,8 +183,8 @@ body {
       display: block;
       height: 2px;
       position: relative;
+      @include transition(background);
       width: 18px;
-      @include transition;
 
       &:before, &:after {
         background: $text-color;
@@ -139,7 +192,7 @@ body {
         display: block;
         height: 100%;
         position: absolute;
-        @include transition;
+        @include transition(all);
         width: 100%;
       }
 
@@ -153,7 +206,7 @@ body {
 
     &:checked {
       ~ .menu {
-        max-height: 370px;
+        max-height: 500px;
       }
 
       ~ .menu-icon .navicon {
@@ -176,7 +229,7 @@ body {
   }
 }
 
-// Animation
+// Animations
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -184,4 +237,14 @@ body {
 
 .header {
   animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 5px rgba($primary-color, 0.5), 0 0 10px rgba($primary-color, 0.5); }
+  50% { text-shadow: 0 0 20px rgba($primary-color, 0.8), 0 0 30px rgba($primary-color, 0.8); }
+  100% { text-shadow: 0 0 5px rgba($primary-color, 0.5), 0 0 10px rgba($primary-color, 0.5); }
+}
+
+.logo-name {
+  animation: glowPulse 2s infinite;
 }
