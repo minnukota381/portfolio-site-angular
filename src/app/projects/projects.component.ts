@@ -16,41 +16,40 @@ interface Project {
 export class ProjectsComponent implements OnInit {
   projects: Project[] = [
     {
-      title: 'Project 1',
+      title: 'CUTM Result Portal',
+      description: 'The CUTM Result Portal is a web application designed to help students and administrators view and manage academic results efficiently. This repository contains the codebase for the portal, including frontend templates, backend logic, and database configurations.',
+      image: 'assets/project1.jpg',
+      link: '#',
+      tags: ['Angular', 'TypeScript', 'SCSS']
+    },
+    {
+      title: 'Youtube Video Downloader',
       description: 'An innovative web application that revolutionizes task management.',
       image: 'assets/project1.jpg',
       link: '#',
       tags: ['Angular', 'TypeScript', 'SCSS']
     },
     {
-      title: 'Project 1',
+      title: 'Social Media Dashboard',
       description: 'An innovative web application that revolutionizes task management.',
       image: 'assets/project1.jpg',
       link: '#',
       tags: ['Angular', 'TypeScript', 'SCSS']
     },
     {
-      title: 'Project 1',
+      title: 'Fitness Tracking App',
       description: 'An innovative web application that revolutionizes task management.',
       image: 'assets/project1.jpg',
       link: '#',
       tags: ['Angular', 'TypeScript', 'SCSS']
     },
     {
-      title: 'Project 1',
+      title: 'IoT based Smart Pond Monitoring',
       description: 'An innovative web application that revolutionizes task management.',
       image: 'assets/project1.jpg',
       link: '#',
       tags: ['Angular', 'TypeScript', 'SCSS']
     },
-    {
-      title: 'Project 1',
-      description: 'An innovative web application that revolutionizes task management.',
-      image: 'assets/project1.jpg',
-      link: '#',
-      tags: ['Angular', 'TypeScript', 'SCSS']
-    },
-    // Add more projects with similar structure
   ];
 
   constructor() { }
