@@ -19,8 +19,8 @@ export class ProjectsComponent implements OnInit {
       title: 'CUTM Result Portal',
       description: 'The CUTM Result Portal is a web application designed to help students and administrators view and manage academic results efficiently. This repository contains the codebase for the portal, including frontend templates, backend logic, and database configurations.',
       image: 'assets/project1.jpg',
-      link: '#',
-      tags: ['Angular', 'TypeScript', 'SCSS']
+      link: 'https://cutm-result-portal.onrender.com/',
+      tags: ['Flask', 'HTML/CSS', 'MongoDB']
     },
     {
       title: 'Youtube Video Downloader',
