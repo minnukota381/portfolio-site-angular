@@ -34,21 +34,28 @@ export class ProjectsComponent implements OnInit {
       description: 'An innovative web application that revolutionizes task management.',
       image: 'assets/project1.jpg',
       link: '#',
-      tags: ['Angular', 'TypeScript', 'SCSS']
+      tags: ['React', 'JavaScript', 'CSS']
     },
     {
       title: 'Fitness Tracking App',
-      description: 'An innovative web application that revolutionizes task management.',
+      description: 'The Fitness Tracker Application is a React-based web application designed to help users monitor their fitness activities. It features an overview of their progress, activity cards, friends list, and more, making it easy to keep track of fitness goals and stay motivated.',
       image: 'assets/project1.jpg',
       link: '#',
-      tags: ['Angular', 'TypeScript', 'SCSS']
+      tags: ['React', 'JavaScript', 'CSS']
     },
     {
       title: 'IoT based Smart Pond Monitoring',
-      description: 'An innovative web application that revolutionizes task management.',
+      description: 'SmartPond is a cutting-edge project aimed at monitoring various parameters of ponds to ensure optimal conditions for aquatic life. Our mission is to utilize technology to safeguard the health and well-being of aquatic ecosystems.',
       image: 'assets/project1.jpg',
       link: '#',
-      tags: ['Angular', 'TypeScript', 'SCSS']
+      tags: ['Angular', 'TypeScript', 'SpringBoot']
+    },
+    {
+      title: 'Todo List Website',
+      description: 'Nep-Tasks is a user-friendly web-based Todo List application designed to help you manage your tasks efficiently. The application is built with HTML, CSS, JavaScript, and utilizes Bootstrap for styling and FontAwesome for icons.',
+      image: 'assets/project1.jpg',
+      link: '#',
+      tags: ['HTML', 'CSS', 'JavaScript']
     },
   ];
 
