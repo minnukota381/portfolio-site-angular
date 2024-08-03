@@ -1,6 +1,5 @@
 .skills {
   padding: 6rem 1rem;
-  // background-color: #f8f9fa;
 }
 
 .skills .container {
@@ -52,7 +51,6 @@
 
 .skill i {
   font-size: 3rem;
-  color: #4facfe;
   margin-bottom: 1rem;
 }
 
@@ -63,6 +61,25 @@
   margin: 0;
 }
 
+/* Specific colors for each skill icon */
+.skill .fa-html5 { color: #E34F26; }
+.skill .fa-css3-alt { color: #1572B6; }
+.skill .fa-js { color: #F7DF1E; }
+.skill .fa-react { color: #61DAFB; }
+.skill .fa-angular { color: #DD0031; }
+.skill .fa-node-js { color: #339933; }
+.skill .fa-python { color: #3776AB; }
+.skill .fa-flask { color: #000000; }
+.skill .fa-java { color: #007396; }
+.skill .fa-code:nth-of-type(1) { color: #A8B9CC; } /* C */
+.skill .fa-code:nth-of-type(2) { color: #00599C; } /* C++ */
+.skill .fa-database:nth-of-type(1) { color: #47A248; } /* MongoDB */
+.skill .fa-database:nth-of-type(2) { color: #4479A1; } /* MySQL */
+.skill .fa-spring { color: #6DB33F; }
+.skill .fa-server { color: #336791; } /* SQL */
+.skill .fa-cogs { color: #0096D6; } /* RESTful APIs */
+
+/* Media queries remain the same */
 @media (max-width: 1200px) {
   .skills-grid {
     grid-template-columns: repeat(3, 1fr);
