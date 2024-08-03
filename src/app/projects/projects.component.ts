@@ -18,28 +18,28 @@ export class ProjectsComponent implements OnInit {
     {
       title: 'CUTM Result Portal',
       description: 'The CUTM Result Portal is a web application designed to help students and administrators view and manage academic results efficiently. This repository contains the codebase for the portal, including frontend templates, backend logic, and database configurations.',
-      image: 'assets/project1.jpg',
+      image: '../../assets/images/CUTMRP.png',
       link: 'https://cutm-result-portal.onrender.com/',
       tags: ['Flask', 'HTML/CSS', 'MongoDB']
     },
     {
       title: 'Youtube Video Downloader',
       description: 'A simple web application built with Node.js and Express to search for YouTube videos and download them in different qualities.',
-      image: 'assets/project1.jpg',
+      image: '../../assets/images/ytdl.png',
       link: '#',
       tags: ['MongoDB', 'ReactJS','NodeJS']
     },
     {
       title: 'Social Media Dashboard',
       description: 'An innovative web application that revolutionizes task management.',
-      image: 'assets/project1.jpg',
+      image: '../../assets/images/smd.png',
       link: '#',
       tags: ['React', 'JavaScript', 'CSS']
     },
     {
       title: 'Fitness Tracking App',
       description: 'The Fitness Tracker Application is a React-based web application designed to help users monitor their fitness activities. It features an overview of their progress, activity cards, friends list, and more, making it easy to keep track of fitness goals and stay motivated.',
-      image: 'assets/project1.jpg',
+      image: '../../assets/images/fitness.png',
       link: '#',
       tags: ['React', 'JavaScript', 'CSS']
     },
