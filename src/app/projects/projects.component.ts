@@ -24,10 +24,10 @@ export class ProjectsComponent implements OnInit {
     },
     {
       title: 'Youtube Video Downloader',
-      description: 'An innovative web application that revolutionizes task management.',
+      description: 'A simple web application built with Node.js and Express to search for YouTube videos and download them in different qualities.',
       image: 'assets/project1.jpg',
       link: '#',
-      tags: ['Angular', 'TypeScript', 'SCSS']
+      tags: ['MongoDB', 'ReactJS','NodeJS']
     },
     {
       title: 'Social Media Dashboard',
