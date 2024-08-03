@@ -1,83 +1,135 @@
 .skills {
-  background-color: #f8f9fa;
-  padding: 4rem 1rem;
+  padding: 6rem 1rem;
+  // background-color: #f8f9fa;
+}
 
-  .container {
-    .text-center {
-      margin-bottom: 2rem;
-      font-size: 2.5rem;
-      color: #333;
-      font-weight: bold;
-    }
+.skills .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-    .row {
-      .skill {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 2rem;
+.skills .section-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  position: relative;
+}
 
-        i {
-          font-size: 3rem;
-          color: #007bff;
-          margin-bottom: 0.5rem;
-        }
+.skills .section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
 
-        p {
-          font-size: 1.1rem;
-          color: #333;
-          font-weight: bold;
-        }
-      }
-    }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.skill i {
+  font-size: 3rem;
+  color: #4facfe;
+  margin-bottom: 1rem;
+}
+
+.skill p {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: bold;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .skills {
+    padding: 5rem 1rem;
+  }
+
+  .skills .section-title {
+    font-size: 2.5rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .skill i {
+    font-size: 2.5rem;
+  }
+
+  .skill p {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 768px) {
   .skills {
-    padding: 3rem 1rem;
+    padding: 4rem 1rem;
+  }
 
-    .container {
-      .text-center {
-        font-size: 2rem;
-      }
+  .skills .section-title {
+    font-size: 2rem;
+  }
 
-      .row {
-        .skill {
-          i {
-            font-size: 2.5rem;
-          }
-
-          p {
-            font-size: 1rem;
-          }
-        }
-      }
-    }
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 576px) {
   .skills {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
+  }
 
-    .container {
-      .text-center {
-        font-size: 1.5rem;
-      }
+  .skills .section-title {
+    font-size: 1.8rem;
+  }
 
-      .row {
-        .skill {
-          i {
-            font-size: 2rem;
-          }
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 
-          p {
-            font-size: 0.9rem;
-          }
-        }
-      }
-    }
+  .skill {
+    padding: 1rem;
+  }
+
+  .skill i {
+    font-size: 2rem;
+  }
+
+  .skill p {
+    font-size: 0.9rem;
   }
 }
