@@ -46,14 +46,14 @@ export class ProjectsComponent implements OnInit {
     {
       title: 'IoT based Smart Pond Monitoring',
       description: 'SmartPond is a cutting-edge project aimed at monitoring various parameters of ponds to ensure optimal conditions for aquatic life. Our mission is to utilize technology to safeguard the health and well-being of aquatic ecosystems.',
-      image: 'assets/project1.jpg',
+      image: '../../assets/images/SPMS.png',
       link: '#',
       tags: ['Angular', 'TypeScript', 'SpringBoot']
     },
     {
       title: 'Todo List Website',
       description: 'Nep-Tasks is a user-friendly web-based Todo List application designed to help you manage your tasks efficiently. The application is built with HTML, CSS, JavaScript, and utilizes Bootstrap for styling and FontAwesome for icons.',
-      image: 'assets/project1.jpg',
+      image: '../../assets/images/todo.png',
       link: '#',
       tags: ['HTML', 'CSS', 'JavaScript']
     },
