@@ -43,7 +43,7 @@ body {
 
   .logo-name {
     font-family: $logo-font;
-    font-weight: 700;
+    font-weight: 900;
     color: $primary-color;
     @include transition(color);
 
@@ -61,8 +61,8 @@ body {
   .nav-link {
     text-decoration: none;
     color: $text-color;
-    font-weight: 500;
-    font-size: 1rem;
+    font-weight: 600;
+    font-size: 20px;
     padding: 10px 15px;
     margin: 0 5px;
     @include transition(all);
