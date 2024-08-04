@@ -70,6 +70,7 @@ i{
     padding: 10px 10px;
     margin: 0 5px;
     @include transition(all);
+  
 
     &:hover, &.active {
       color: $primary-color;
@@ -83,6 +84,18 @@ i{
 }
 
 // Mobile styles
+@media (max-width: 1024px) {
+  .nav-link {
+    i {
+      display: none;
+    }
+  }
+}
+
+.menu-btn, .menu-icon {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
