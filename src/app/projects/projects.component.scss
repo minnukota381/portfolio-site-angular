@@ -63,6 +63,7 @@
   .project-card {
     border-radius: 15px;
     overflow: hidden;
+    background-color: azure;
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.5);
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 
@@ -151,8 +152,8 @@
     gap: 0.6rem;
 
     .tag {
-      background-color: #f1f8ff;
-      color: #4facfe;
+      background-color: #4facfe;
+      color: #f1f8ff;
       padding: 0.3rem 0.8rem;
       border-radius: 20px;
       font-size: 0.75rem;
