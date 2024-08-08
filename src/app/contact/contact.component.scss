@@ -1,28 +1,56 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
+$primary-color: #007bff;
+$secondary-color: #00c6ff;
+$light-background: #f4f7f9;
+$white: #ffffff;
+$dark-text: #333333;
+$light-text: #777777;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
 .contact {
-  padding: 5rem 1rem;
+  padding: 6rem 1rem;
 
   .container {
-    width: 60%;
-    max-width: 90%;
+    width: 80%;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 2rem;
+    background-color: $white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px $shadow-color;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0) 70%);
+      z-index: 0;
+      opacity: 0.3;
+      pointer-events: none;
+    }
 
     h2 {
       text-align: center;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       font-size: 2.5rem;
-      color: #ffffff;
+      color: $dark-text;
       position: relative;
+      z-index: 1;
 
       &::after {
         content: '';
         display: block;
-        width: 60px;
+        width: 80px;
         height: 4px;
-        background: linear-gradient(90deg, #007bff, #00c6ff);
-        margin: 0.8rem auto 0;
+        background: linear-gradient(90deg, $primary-color, $secondary-color);
+        margin: 0.5rem auto 0;
         border-radius: 2px;
       }
     }
@@ -30,11 +58,8 @@
     form {
       display: flex;
       flex-direction: column;
-      background-color: #ffffff;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
 
       .form-group {
         position: relative;
@@ -42,52 +67,53 @@
 
         i {
           position: absolute;
-          top: 0.8rem;
+          top: 50%;
           left: 1rem;
-          color: #007bff;
-          font-size: 1.2rem;
+          transform: translateY(-50%);
+          color: $primary-color;
+          font-size: 1.3rem;
+          transition: color 0.3s ease;
         }
 
         input, textarea {
           width: calc(100% - 3.5rem);
-          padding: 0.8rem 1rem 0.8rem 2.5rem;
+          padding: 0.8rem 1rem 0.8rem 3rem; // Extra padding for icon
           border: 2px solid #e0e0e0;
-          border-radius: 25px;
-          background-color: #f8f9fa;
+          border-radius: 10px;
           font-size: 1rem;
           transition: all 0.3s ease;
-          box-sizing: border-box;
+          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
 
           &:focus {
             outline: none;
-            border-color: #007bff;
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+            border-color: $primary-color;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
           }
 
           &:focus + label, &:not(:placeholder-shown) + label {
-            top: -0.5rem;
-            left: 1rem;
-            font-size: 0.8rem;
-            color: #007bff;
-            background-color: #fff;
-            padding: 0 5px;
+            top: -0.7rem;
+            left: 2rem;
+            font-size: 0.9rem;
+            color: $primary-color;
+            background-color: $white;
+            padding: 0 0.5rem;
           }
         }
 
         label {
           position: absolute;
-          top: 0.8rem;
-          left: 2.5rem;
+          top: 50%;
+          left: 3rem;
           font-size: 1rem;
-          color: #777;
+          color: $light-text;
           pointer-events: none;
+          transform: translateY(-50%);
           transition: 0.3s ease all;
         }
 
         textarea {
           resize: vertical;
-          min-height: 100px;
-          border-radius: 15px;
+          min-height: 120px;
         }
       }
 
@@ -96,13 +122,29 @@
         padding: 0.8rem 2rem;
         border: none;
         border-radius: 25px;
-        background: linear-gradient(90deg, #007bff, #00c6ff);
-        color: #fff;
+        background: linear-gradient(90deg, $primary-color, $secondary-color);
+        color: $white;
         font-size: 1rem;
         font-weight: bold;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 300%;
+          height: 300%;
+          background: rgba(255, 255, 255, 0.2);
+          transition: transform 0.3s ease;
+          transform: translate(-50%, -50%) scale(0);
+          border-radius: 50%;
+          z-index: 0;
+        }
 
         i {
           margin-right: 8px;
@@ -110,102 +152,63 @@
 
         &:hover {
           transform: translateY(-3px);
-          box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+          box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+
+          &::before {
+            transform: translate(-50%, -50%) scale(1);
+          }
         }
 
         &:active {
           transform: translateY(-1px);
+        }
+
+        span {
+          position: relative;
+          z-index: 1;
         }
       }
     }
   }
 }
 
+// Responsive adjustments
 @media (max-width: 1200px) {
   .contact {
-    padding: 4rem 1rem;
-
     .container {
-      width: 80%;
-
-      .form-group {
-        i {
-          font-size: 1.1rem;
-        }
-
-        input, textarea {
-          padding: 0.8rem 1rem 0.8rem 2.2rem;
-          font-size: 0.95rem;
-        }
-
-        label {
-          font-size: 0.95rem;
-        }
-      }
-
-      button {
-        padding: 0.8rem 1.8rem;
-        font-size: 0.95rem;
-      }
+      width: 90%;
     }
   }
 }
 
 @media (max-width: 992px) {
   .contact {
-    padding: 3rem 1rem;
-
     .container {
-      width: 90%;
-
-      .form-group {
-        i {
-          font-size: 1rem;
-        }
-
-        input, textarea {
-          padding: 0.7rem 1rem 0.7rem 2rem;
-          font-size: 0.9rem;
-        }
-
-        label {
-          font-size: 0.9rem;
-        }
-      }
-
-      button {
-        padding: 0.7rem 1.5rem;
-        font-size: 0.9rem;
-      }
+      width: 95%;
     }
   }
 }
 
 @media (max-width: 768px) {
   .contact {
-    padding: 2rem 1rem;
+    padding: 4rem 1rem;
 
     .container {
-      width: 100%;
-
       h2 {
         font-size: 2rem;
       }
 
       .form-group {
         i {
-          top: 0.7rem;
           font-size: 1rem;
         }
 
         input, textarea {
-          padding: 0.7rem 1rem 0.7rem 2rem;
+          padding: 0.7rem 1rem 0.7rem 2.5rem;
           font-size: 0.9rem;
         }
 
         label {
-          top: 0.7rem;
-          left: 2rem;
           font-size: 0.9rem;
         }
       }
@@ -220,16 +223,22 @@
 
 @media (max-width: 576px) {
   .contact {
-    padding: 1.5rem 0.5rem;
+    padding: 2rem 0.5rem;
 
     .container {
+      width: 100%;
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
       .form-group {
         i {
           font-size: 0.9rem;
         }
 
         input, textarea {
-          padding: 0.6rem 0.8rem 0.6rem 1.8rem;
+          padding: 0.6rem 0.8rem 0.6rem 2.2rem;
           font-size: 0.85rem;
         }
 
