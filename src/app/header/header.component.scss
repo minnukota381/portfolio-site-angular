@@ -2,8 +2,8 @@ $primary-color: #6a00ff;
 $secondary-color: #001feb;
 $background-color: #ffffff;
 $text-color: #ffffff;
-$logo-font: 'Georgia', serif;
-$body-font: 'Arial', sans-serif;
+// $logo-font: 'Georgia', serif;
+// $body-font: 'Arial', sans-serif;
 
 // Mixins
 @mixin transition($property: all, $duration: 0.3s, $timing: ease) {
