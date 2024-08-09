@@ -12,7 +12,7 @@ $body-font: 'Arial', sans-serif;
 
 // Styles
 body {
-  font-family: $body-font;
+  // font-family: $body-font;
   margin: 0;
   padding: 0;
   color: $text-color;
@@ -44,7 +44,7 @@ i{
   font-size: 1.8em;
 
   .logo-name {
-    font-family: $logo-font;
+    // font-family: $logo-font;
     font-weight: 900;
     color: $primary-color;
     @include transition(color);
