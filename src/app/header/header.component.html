@@ -10,27 +10,27 @@
       <span class="navicon"></span>
     </label>
     <nav class="menu">
-      <a class="nav-link" routerLink="/" routerLinkActive="active" aria-current="page">
+      <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <i class="fas fa-home"></i>
         <span>Home</span>
       </a>
-      <a class="nav-link" routerLink="/about" routerLinkActive="active">
+      <a class="nav-link" routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <i class="fas fa-user"></i>
         <span>About</span>
       </a>
-      <a class="nav-link" routerLink="/projects" routerLinkActive="active">
+      <a class="nav-link" routerLink="/projects" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <i class="fas fa-project-diagram"></i>
         <span>Projects</span>
       </a>
-      <a class="nav-link" routerLink="/skills" routerLinkActive="active">
+      <a class="nav-link" routerLink="/skills" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <i class="fas fa-cogs"></i>
         <span>Skills</span>
       </a>
-      <a class="nav-link" routerLink="/resume" routerLinkActive="active">
+      <a class="nav-link" routerLink="/resume" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <i class="fas fa-file-alt"></i>
         <span>Resume</span>
       </a>
-      <a class="nav-link" routerLink="/contact" routerLinkActive="active">
+      <a class="nav-link" routerLink="/contact" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <i class="fas fa-envelope"></i>
         <span>Contact</span>
       </a>
