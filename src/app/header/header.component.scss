@@ -69,8 +69,12 @@ i{
     margin: 0 5px;
     @include transition(all);
 
+    &:hover {
+      color: $primary-color;
+      background-color: rgba($primary-color, 0.1);
+    }
 
-    &:hover, &.active {
+    &.active {
       color: $primary-color;
       background-color: rgba($primary-color, 0.1);
     }
