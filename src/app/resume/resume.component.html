@@ -1,11 +1,16 @@
 <section class="resume">
-  <h2>Resume</h2>
+  <h2 class="resume__title">My Professional Resume</h2>
 
-  <div class="resume-options">
-    <a href="../../assets/Resume.pdf" target="_blank" download>
-      <button>Download Resume PDF</button>
+  <div class="resume__options">
+    <a href="../../assets/Resume.pdf" target="_blank" download class="resume__download">
+      <i class="fas fa-download"></i> Download Resume PDF
+    </a>
+    <a href="#" class="resume__print" onclick="window.print()">
+      <i class="fas fa-print"></i> Print Resume
     </a>
   </div>
 
-  <iframe src="../../assets/Resume.pdf" class="resume-iframe" title="Resume"></iframe>
+  <div class="resume__container">
+    <iframe src="../../assets/Resume.pdf" class="resume__iframe" title="Resume"></iframe>
+  </div>
 </section>
