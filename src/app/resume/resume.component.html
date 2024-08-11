@@ -2,44 +2,10 @@
   <h2>Resume</h2>
 
   <div class="resume-options">
-    <button (click)="toggleResumeView()">{{ showResume ? 'Hide Resume' : 'Show Resume' }}</button>
     <a href="../../assets/Resume.pdf" target="_blank" download>
       <button>Download Resume PDF</button>
     </a>
   </div>
 
-  <div *ngIf="showResume" class="resume-content">
-    <div class="section education">
-      <h3>Education</h3>
-      <ul>
-        <li>
-          <h4>Degree Name</h4>
-          <p>University Name, Graduation Year</p>
-        </li>
-      </ul>
-    </div>
-
-    <div class="section experience">
-      <h3>Work Experience</h3>
-      <ul>
-        <li>
-          <h4>Job Title</h4>
-          <p>Company Name, Start Date - End Date</p>
-          <ul>
-            <li>Responsibility or achievement</li>
-            <li>Another responsibility or achievement</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
-    <div class="section skills">
-      <h3>Skills</h3>
-      <ul>
-        <li>Skill 1</li>
-        <li>Skill 2</li>
-        <li>Skill 3</li>
-      </ul>
-    </div>
-  </div>
+  <iframe src="../../assets/Resume.pdf" class="resume-iframe" title="Resume"></iframe>
 </section>
