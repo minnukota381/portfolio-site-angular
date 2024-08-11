@@ -1,61 +1,69 @@
 <section class="contact" id="contact">
   <div class="contact__container">
-    <h2 class="contact__title">Get in Touch</h2>
-    <p class="contact__subtitle">I'd love to hear from you!</p>
+    <h2 class="contact__title">Let's Connect</h2>
+    <p class="contact__subtitle">Have a question or want to work together?</p>
 
-    <form class="contact__form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
-      <div class="contact__form-group">
-        <input
-          type="text"
-          id="name"
-          name="name"
-          [(ngModel)]="contactModel.name"
-          required
-          placeholder="Your Name"
-          class="contact__input"
-        >
-      </div>
+    <div class="contact__content">
+      <form class="contact__form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+        <div class="contact__form-group">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="contactModel.name"
+            required
+            placeholder="Your Name"
+            class="contact__input"
+          >
+        </div>
 
-      <div class="contact__form-group">
-        <input
-          type="email"
-          id="email"
-          name="email"
-          [(ngModel)]="contactModel.email"
-          required
-          placeholder="Your Email"
-          class="contact__input"
-        >
-      </div>
+        <div class="contact__form-group">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="contactModel.email"
+            required
+            placeholder="Your Email"
+            class="contact__input"
+          >
+        </div>
 
-      <div class="contact__form-group">
-        <textarea
-          id="message"
-          name="message"
-          [(ngModel)]="contactModel.message"
-          required
-          placeholder="Your Message"
-          class="contact__input contact__textarea"
-        ></textarea>
-      </div>
+        <div class="contact__form-group">
+          <textarea
+            id="message"
+            name="message"
+            [(ngModel)]="contactModel.message"
+            required
+            placeholder="Your Message"
+            class="contact__input contact__textarea"
+          ></textarea>
+        </div>
 
-      <button type="submit" class="contact__button" [disabled]="!contactForm.form.valid">
-        Send Message
-      </button>
-    </form>
+        <button type="submit" class="contact__button" [disabled]="!contactForm.form.valid">
+          <span>Send Message</span>
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
 
-    <div class="contact__info">
-      <div class="contact__info-item">
-        <i class="fas fa-envelope"></i>
-        <a href="mailto:your.email&#64;example.com">your.email&#64;example.com</a>
-      </div>
-      <div class="contact__info-item">
-        <i class="fas fa-phone"></i>
-        <a href="tel:+1234567890">+1 (234) 567-890</a>
-      </div>
-      <div class="contact__info-item">
-        <i class="fas fa-map-marker-alt"></i>
-        <span>Your City, Your Country</span>
+      <div class="contact__info">
+        <div class="contact__info-item">
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:220101120151&#64;cutm.ac.in">220101120151&#64;cutm.ac.in</a>
+        </div>
+        <div class="contact__info-item">
+          <i class="fas fa-phone"></i>
+          <a href="tel:+1234567890">+1 (234) 567-890</a>
+        </div>
+        <div class="contact__info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Paralakhemundi, India</span>
+        </div>
+        <div class="contact__social">
+          <a href="#" class="contact__social-link"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="contact__social-link"><i class="fab fa-github"></i></a>
+          <a href="#" class="contact__social-link"><i class="fab fa-twitter"></i></a>
+        </div>
       </div>
     </div>
   </div>

@@ -1,32 +1,42 @@
 .contact {
-  background-color: #f8f9fa;
-  padding: 5rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 6rem 0;
+  color: #ffffff;
 
   &__container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
   }
 
   &__title {
-    font-size: 2.5rem;
-    color: #2c3e50;
+    font-size: 3.5rem;
     text-align: center;
     margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
   }
 
   &__subtitle {
-    font-size: 1.2rem;
-    color: #7f8c8d;
+    font-size: 1.3rem;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    opacity: 0.9;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   }
 
   &__form {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
   }
 
   &__form-group {
@@ -35,15 +45,23 @@
 
   &__input {
     width: 100%;
-    padding: 0.75rem;
+    padding: 1rem;
     font-size: 1rem;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    transition: border-color 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
 
     &:focus {
       outline: none;
-      border-color: #3498db;
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     }
   }
 
@@ -53,51 +71,107 @@
   }
 
   &__button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     padding: 1rem;
-    background-color: #3498db;
-    color: #ffffff;
+    background: #ffffff;
+    color: #667eea;
     border: none;
-    border-radius: 4px;
-    font-size: 1rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+
+    i {
+      margin-left: 0.5rem;
+      transition: transform 0.3s ease;
+    }
 
     &:hover {
-      background-color: #2980b9;
+      background: #f0f0f0;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+      i {
+        transform: translateX(5px);
+      }
     }
 
     &:disabled {
-      background-color: #bdc3c7;
+      background-color: rgba(255, 255, 255, 0.5);
+      color: rgba(102, 126, 234, 0.5);
       cursor: not-allowed;
     }
   }
 
   &__info {
-    margin-top: 3rem;
-    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &__info-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 
     i {
-      font-size: 1.2rem;
-      color: #3498db;
-      margin-right: 0.5rem;
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: all 0.3s ease;
     }
 
     a, span {
-      color: #34495e;
+      color: #ffffff;
       text-decoration: none;
-      transition: color 0.3s ease;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
 
       &:hover {
-        color: #3498db;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  &__social-link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    i {
+      font-size: 1.5rem;
+      color: #ffffff;
+    }
+
+    &:hover {
+      background: #ffffff;
+      transform: translateY(-5px);
+
+      i {
+        color: #667eea;
       }
     }
   }
@@ -105,14 +179,19 @@
 
 @media (max-width: 768px) {
   .contact {
-    padding: 3rem 0;
+    padding: 4rem 0;
 
     &__title {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
-    &__subtitle {
-      font-size: 1rem;
+    &__content {
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    &__form, &__info {
+      width: 100%;
     }
   }
 }
