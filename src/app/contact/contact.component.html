@@ -1,26 +1,62 @@
-<section class="contact">
-  <div class="container">
-    <h2>Get in Touch</h2>
-    <form>
-      <div class="form-group">
-        <i class="fas fa-user"></i>
-        <input type="text" id="name" name="name" required>
-        <label for="name">Your Name</label>
+<section class="contact" id="contact">
+  <div class="contact__container">
+    <h2 class="contact__title">Get in Touch</h2>
+    <p class="contact__subtitle">I'd love to hear from you!</p>
+
+    <form class="contact__form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+      <div class="contact__form-group">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          [(ngModel)]="contactModel.name"
+          required
+          placeholder="Your Name"
+          class="contact__input"
+        >
       </div>
-      <div class="form-group">
-        <i class="fas fa-envelope"></i>
-        <input type="email" id="email" name="email" required>
-        <label for="email">Your Email</label>
+
+      <div class="contact__form-group">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="contactModel.email"
+          required
+          placeholder="Your Email"
+          class="contact__input"
+        >
       </div>
-      <div class="form-group">
-        <i class="fas fa-comment-alt"></i>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <label for="message">Your Message</label>
+
+      <div class="contact__form-group">
+        <textarea
+          id="message"
+          name="message"
+          [(ngModel)]="contactModel.message"
+          required
+          placeholder="Your Message"
+          class="contact__input contact__textarea"
+        ></textarea>
       </div>
-      <button type="submit">
-        <i class="fas fa-paper-plane"></i>
+
+      <button type="submit" class="contact__button" [disabled]="!contactForm.form.valid">
         Send Message
       </button>
     </form>
+
+    <div class="contact__info">
+      <div class="contact__info-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:your.email&#64;example.com">your.email&#64;example.com</a>
+      </div>
+      <div class="contact__info-item">
+        <i class="fas fa-phone"></i>
+        <a href="tel:+1234567890">+1 (234) 567-890</a>
+      </div>
+      <div class="contact__info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Your City, Your Country</span>
+      </div>
+    </div>
   </div>
 </section>
