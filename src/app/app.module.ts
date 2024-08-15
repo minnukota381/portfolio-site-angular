@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ParticlesBackgroundComponent } from './particles-background/particles-background.component';
 import { ThreejsBackgroundComponent } from './threejs-background/threejs-background.component';
+import { StarBackgroundComponent } from './star-background/star-background.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ThreejsBackgroundComponent } from './threejs-background/threejs-backgro
     ResumeComponent,
     ParticlesBackgroundComponent,
     ThreejsBackgroundComponent,
+    StarBackgroundComponent,
   ],
   imports: [
     BrowserModule,
