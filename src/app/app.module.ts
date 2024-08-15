@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ParticlesBackgroundComponent } from './particles-background/particles-background.component';
+import { ThreejsBackgroundComponent } from './threejs-background/threejs-background.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ParticlesBackgroundComponent } from './particles-background/particles-b
     SkillsComponent,
     ResumeComponent,
     ParticlesBackgroundComponent,
+    ThreejsBackgroundComponent,
   ],
   imports: [
     BrowserModule,
