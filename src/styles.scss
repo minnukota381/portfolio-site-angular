@@ -77,12 +77,12 @@ body {
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
 }
 
-.fade-in {
-  animation: fadeIn 2s ease-in-out;
+.slide-in {
+  animation: slideIn 1s ease-out;
 }
 
