@@ -7,7 +7,7 @@ import * as THREE from 'three';
   styleUrls: ['./threejs-background.component.scss']
 })
 export class ThreejsBackgroundComponent implements OnInit {
-  @ViewChild('container', { static: true }) container!: ElementRef; // Use the non-null assertion operator
+  @ViewChild('container', { static: true }) container!: ElementRef;
 
   ngOnInit() {
     if (this.container) {
@@ -26,7 +26,13 @@ export class ThreejsBackgroundComponent implements OnInit {
         vertices.push(Math.random() * 1000 - 500);
       }
       geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-      const material = new THREE.PointsMaterial({ color: 0x888888 });
+
+      // Increase particle size
+      const material = new THREE.PointsMaterial({
+        color: 0x888888,
+        size: 2
+      });
+
       const particles = new THREE.Points(geometry, material);
       scene.add(particles);
 
@@ -34,7 +40,7 @@ export class ThreejsBackgroundComponent implements OnInit {
 
       // Use a clock to control animation speed
       const clock = new THREE.Clock();
-      const rotationSpeed = 0.005; // Slower rotation speed
+      const rotationSpeed = 0.005;
 
       function animate() {
         requestAnimationFrame(animate);
