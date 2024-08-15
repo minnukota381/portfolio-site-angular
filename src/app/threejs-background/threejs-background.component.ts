@@ -32,10 +32,18 @@ export class ThreejsBackgroundComponent implements OnInit {
 
       camera.position.z = 500;
 
+      // Use a clock to control animation speed
+      const clock = new THREE.Clock();
+      const rotationSpeed = 0.005; // Slower rotation speed
+
       function animate() {
         requestAnimationFrame(animate);
-        particles.rotation.x += 0.01;
-        particles.rotation.y += 0.01;
+
+        // Update rotation based on clock time
+        const delta = clock.getDelta();
+        particles.rotation.x += rotationSpeed * delta;
+        particles.rotation.y += rotationSpeed * delta;
+
         renderer.render(scene, camera);
       }
       animate();
