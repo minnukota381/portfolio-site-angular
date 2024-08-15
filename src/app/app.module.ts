@@ -13,6 +13,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { ParticlesBackgroundComponent } from './particles-background/particles-background.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     ContactComponent,
     SkillsComponent,
     ResumeComponent,
+    ParticlesBackgroundComponent,
   ],
   imports: [
     BrowserModule,
