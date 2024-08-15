@@ -38,18 +38,23 @@ export class StarBackgroundComponent implements OnInit {
     // Generate particles
     const geometry = new BufferGeometry();
     const vertices = new Float32Array(5000 * 3);
+    const radius = 1.5; // Adjust the radius to control the distance between particles
     for (let i = 0; i < vertices.length; i += 3) {
-      vertices[i] = Math.random() * 2 - 1;
-      vertices[i + 1] = Math.random() * 2 - 1;
-      vertices[i + 2] = Math.random() * 2 - 1;
+      // Distribute particles within a sphere with a certain radius
+      vertices[i] = (Math.random() * 2 - 1) * radius;
+      vertices[i + 1] = (Math.random() * 2 - 1) * radius;
+      vertices[i + 2] = (Math.random() * 2 - 1) * radius;
     }
     geometry.setAttribute('position', new Float32BufferAttribute(vertices, 3));
 
+    // Create a material with a larger size to make particles appear as circles
     const material = new PointsMaterial({
       color: 0xffffff,
-      size: 0.005,  // Adjust the size as needed
+      size: 0.005,
+      sizeAttenuation: true,
       transparent: true,
-      opacity: 0.7
+      opacity: 0.7,
+      depthWrite: false
     });
 
     this.particles = new Points(geometry, material);
@@ -62,10 +67,10 @@ export class StarBackgroundComponent implements OnInit {
   private animate() {
     requestAnimationFrame(() => this.animate());
 
-    // Rotate particles
+    // Slow down the rotation of particles
     const delta = this.clock.getDelta();
-    this.particles.rotation.x -= delta / 10;
-    this.particles.rotation.y -= delta / 15;
+    this.particles.rotation.x -= delta / 50; // Slower rotation
+    this.particles.rotation.y -= delta / 70; // Slower rotation
 
     this.renderer.render(this.scene, this.camera);
   }
