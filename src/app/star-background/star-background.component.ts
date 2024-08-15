@@ -47,9 +47,7 @@ export class StarBackgroundComponent implements OnInit {
     }
     geometry.setAttribute('position', new Float32BufferAttribute(vertices, 3));
 
-    // Create a material with a larger size to make particles appear as circles
     const material = new PointsMaterial({
-      color: 0xffffff,
       size: 0.005,
       sizeAttenuation: true,
       transparent: true,
@@ -60,7 +58,6 @@ export class StarBackgroundComponent implements OnInit {
     this.particles = new Points(geometry, material);
     this.scene.add(this.particles);
 
-    // Initialize clock for animation
     this.clock = new Clock();
   }
 
