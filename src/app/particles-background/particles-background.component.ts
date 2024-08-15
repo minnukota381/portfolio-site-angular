@@ -19,7 +19,7 @@ export class ParticlesBackgroundComponent implements OnInit {
             "opacity": { "value": 0.5 },
             "size": { "value": 3 },
             "line_linked": { "enable": true },
-            "move": { "enable": true, "speed": 6 }
+            "move": { "enable": true, "speed": 3 }
           },
           "interactivity": {
             "events": {
