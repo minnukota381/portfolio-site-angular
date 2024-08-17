@@ -92,10 +92,9 @@ i{
       display: none;
     }
   }
-}
-
-.menu-btn, .menu-icon {
-  display: none;
+  .menu-btn, .menu-icon {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
