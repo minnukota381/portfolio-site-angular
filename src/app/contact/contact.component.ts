@@ -13,7 +13,6 @@ export class ContactComponent {
   };
 
   onSubmit() {
-    // Handle form submission here
     console.log('Form submitted', this.contactModel);
   }
 }
