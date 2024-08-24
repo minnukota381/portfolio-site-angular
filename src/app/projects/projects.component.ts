@@ -33,7 +33,7 @@ export class ProjectsComponent implements OnInit {
       title: 'Social Media Dashboard',
       description: 'An innovative web application that revolutionizes task management.',
       image: '../../assets/images/smd.png',
-      link: '#',
+      link: 'https://social-media-dashboard-nep.vercel.app/',
       tags: ['React', 'JavaScript', 'CSS']
     },
     {
@@ -54,7 +54,7 @@ export class ProjectsComponent implements OnInit {
       title: 'Todo List Website',
       description: 'Nep-Tasks is a user-friendly web-based Todo List application designed to help you manage your tasks efficiently. The application is built with HTML, CSS, JavaScript, and utilizes Bootstrap for styling and FontAwesome for icons.',
       image: '../../assets/images/todo.png',
-      link: '#',
+      link: 'https://to-do-list-nep.vercel.app/',
       tags: ['HTML', 'CSS', 'JavaScript']
     },
   ];
