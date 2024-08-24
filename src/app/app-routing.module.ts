@@ -14,7 +14,6 @@ const routes: Routes = [
   { path: 'skills', component: SkillsComponent },
   { path: 'resume', component: ResumeComponent },
   { path: 'contact', component: ContactComponent },
-  //wildcard route for 404 page
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 

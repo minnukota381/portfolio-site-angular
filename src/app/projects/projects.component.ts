@@ -26,7 +26,7 @@ export class ProjectsComponent implements OnInit {
       title: 'Youtube Video Downloader',
       description: 'A simple web application built with Node.js and Express to search for YouTube videos and download them in different qualities.',
       image: '../../assets/images/ytdl.png',
-      link: '#',
+      link: 'https://ytvdl.onrender.com/',
       tags: ['MongoDB', 'ReactJS','NodeJS']
     },
     {
@@ -40,7 +40,7 @@ export class ProjectsComponent implements OnInit {
       title: 'Fitness Tracking App',
       description: 'The Fitness Tracker Application is a React-based web application designed to help users monitor their fitness activities. It features an overview of their progress, activity cards, friends list, and more, making it easy to keep track of fitness goals and stay motivated.',
       image: '../../assets/images/fitness.png',
-      link: '#',
+      link: 'https://fitness-tracking-app.vercel.app/',
       tags: ['React', 'JavaScript', 'CSS']
     },
     {
