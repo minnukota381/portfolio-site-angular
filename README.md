@@ -1,4 +1,4 @@
-# Portfolio Angular
+# Minnu's Portfolio Angular
 
 This repository contains the source code for my personal portfolio website built with Angular. The website showcases my projects, skills, and contact information.
 
