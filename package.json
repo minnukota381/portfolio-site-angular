@@ -38,7 +38,7 @@
     "three-stdlib": "^2.34.0",
     "tslib": "^2.8.1",
     "typed.js": "^2.1.0",
-    "zone.js": "~0.14.10"
+    "zone.js": "~0.15.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "18.2.12",
