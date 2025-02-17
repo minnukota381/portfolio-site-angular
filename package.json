@@ -29,7 +29,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@ng-bootstrap/ng-bootstrap": "^17.0.1",
     "@popperjs/core": "^2.11.8",
-    "angular-svg-icon": "^19.0.1",
+    "angular-svg-icon": "^19.1.1",
     "bootstrap": "^5.3.3",
     "particles.js": "^2.0.0",
     "rxjs": "~7.8.0",
