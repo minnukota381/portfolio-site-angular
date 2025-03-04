@@ -33,7 +33,7 @@
     "bootstrap": "^5.3.3",
     "particles.js": "^2.0.0",
     "rxjs": "~7.8.0",
-    "sass": "^1.83.4",
+    "sass": "^1.85.1",
     "three": "^0.174.0",
     "three-stdlib": "^2.34.0",
     "tslib": "^2.8.1",
