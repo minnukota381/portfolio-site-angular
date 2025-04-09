@@ -15,7 +15,7 @@
     "@angular/common": "19.2.5",
     "@angular/compiler": "19.2.5",
     "@angular/core": "19.2.5",
-    "@angular/forms": "19.2.4",
+    "@angular/forms": "19.2.5",
     "@angular/localize": "19.0.5",
     "@angular/material": "19.0.5",
     "@angular/platform-browser": "19.2.5",
