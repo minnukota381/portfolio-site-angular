@@ -19,7 +19,7 @@
     "@angular/localize": "19.0.5",
     "@angular/material": "19.2.9",
     "@angular/platform-browser": "19.2.7",
-    "@angular/platform-browser-dynamic": "19.2.5",
+    "@angular/platform-browser-dynamic": "19.2.8",
     "@angular/router": "19.2.3",
     "@angular/service-worker": "19.2.3",
     "@fortawesome/angular-fontawesome": "^1.0.0",
