@@ -13,7 +13,7 @@
     "@angular/animations": "20.0.0",
     "@angular/cdk": "20.0.1",
     "@angular/common": "19.2.13",
-    "@angular/compiler": "20.0.0",
+    "@angular/compiler": "20.0.2",
     "@angular/core": "19.2.5",
     "@angular/forms": "19.2.6",
     "@angular/localize": "19.0.5",
