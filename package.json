@@ -16,7 +16,7 @@
     "@angular/compiler": "20.0.2",
     "@angular/core": "19.2.5",
     "@angular/forms": "19.2.6",
-    "@angular/localize": "19.0.5",
+    "@angular/localize": "20.0.2",
     "@angular/material": "19.2.16",
     "@angular/platform-browser": "19.2.7",
     "@angular/platform-browser-dynamic": "19.2.9",
