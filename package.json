@@ -30,7 +30,7 @@
     "@ng-bootstrap/ng-bootstrap": "^18.0.0",
     "@popperjs/core": "^2.11.8",
     "angular-svg-icon": "^19.1.1",
-    "bootstrap": "^5.3.6",
+    "bootstrap": "^5.3.7",
     "particles.js": "^2.0.0",
     "rxjs": "~7.8.2",
     "sass": "^1.89.0",
