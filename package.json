@@ -18,7 +18,7 @@
     "@angular/forms": "20.0.6",
     "@angular/localize": "20.1.2",
     "@angular/material": "20.1.0",
-    "@angular/platform-browser": "20.0.4",
+    "@angular/platform-browser": "20.1.6",
     "@angular/platform-browser-dynamic": "20.1.2",
     "@angular/router": "20.0.4",
     "@angular/service-worker": "20.1.3",
